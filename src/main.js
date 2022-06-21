@@ -47,12 +47,11 @@ function renderPlaylists(playlists) {
    *  name: "playlist name",
    *  imageUrl: "playlist image url"
    * }
-
    * TODO: Use a for loop over playlists.
    *
    * TODO: For each item in the playlist, call addPlaylistToHTML on the playlist.
    */
-
+  playlists.forEach(playlist => addPlaylistToHTML(playlist))
 }
 
 /**
@@ -146,10 +145,9 @@ async function render_page() {
   if (document.title == "Playlists") {
     // Call getUserPlaylists and save the array result.
     let playlists = await getUserPlaylists(token);
-    console.log("playlists",playlists);
 
     // TODO: call renderPlaylists (pass in the array found in the previous step)
-
+    renderPlaylists(playlists)
   }
   if (document.title == "Recommendations") {
     // TODO: call getArtistSeeds, getGenreSeeds, and getAlbumSeeds and store array results in variables
