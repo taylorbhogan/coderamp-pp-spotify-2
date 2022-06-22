@@ -121,11 +121,10 @@ function renderRecommendations(recommendations) {
    * "For each" element in the array, create an HTML list item
    * The list item should contain info you'd like your user to see
    */
-  console.log("recommendations",recommendations);
   // TODO: Use a for loop over playlists.
 
   // TODO: For each item in the playlist, call addRecommendationToHTML (from recommendations_dom.js)
-
+  recommendations.forEach(recommendation => addRecommendationToHTML(recommendation))
 }
 
 
