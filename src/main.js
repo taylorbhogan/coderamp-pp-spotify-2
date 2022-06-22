@@ -93,15 +93,6 @@ function renderRecommendations(recommendations) {
   recommendations.forEach(recommendation => addRecommendationToHTML(recommendation))
 }
 
-window.onSpotifyIframeApiReady = (IFrameAPI) => {
-  const element = document.getElementById("embed-iframe")
-  const options = {
-    height: '200',
-    uri: "spotify:episode:7makk4oTQel546B0PZlDM5",
-  };
-  const callback = (EmbedController) => {};
-  IFrameAPI.createController(element, options, callback)
-}
 
 async function render_page() {
   let token = await getToken(clientId, clientSecret);

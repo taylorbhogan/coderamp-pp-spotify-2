@@ -31,7 +31,8 @@ nav a {
 }
 
 main {
-  margin: 2rem;
+  margin: 4rem;
+  overflow: scroll;
 }
 
 main ul {
@@ -44,10 +45,11 @@ main ul {
 
 .listItem{
   background-color: var(--gray2);
-  padding: 1rem;
+  padding: 1rem 1rem .5rem 1rem;
   border-radius: var(--borderRadiusCard);
   cursor: pointer;
 }
+
 .listItem:hover{
   background-color: var(--gray4);
 }
@@ -73,4 +75,13 @@ main ul {
   font-size: 1rem;
   font-weight: 500;
   color: var(--gray3);
+  margin-top: .2rem;
+}
+
+.listItem iframe {
+  width: 100%;
+  border-radius: 12px;
+  height: 100px;
+  border: none;
+  margin-top: .4rem;
 }
