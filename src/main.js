@@ -23,10 +23,9 @@ async function getUserPlaylists(token) {
   .then(
     data => {
       return data
-      .json() // extract json object
-      .then( // once that's done (promise),
+      .json()
+      .then(
         json => {
-          // look thru the different 'items' returned,
           return getListOfPlaylistObjects(json['items']);
         }
       );
@@ -36,21 +35,7 @@ async function getUserPlaylists(token) {
   );
 }
 
-/**
- * Uses an array of playlist name objects to create HTML list items showcasing your
- * real public playlists.
- */
 function renderPlaylists(playlists) {
-  /**
-   * `playlists` is a Javascript array of objects
-   * Each object in the array looks like: {
-   *  name: "playlist name",
-   *  imageUrl: "playlist image url"
-   * }
-   * TODO: Use a for loop over playlists.
-   *
-   * TODO: For each item in the playlist, call addPlaylistToHTML on the playlist.
-   */
   playlists.forEach(playlist => addPlaylistToHTML(playlist))
 }
 
@@ -103,38 +88,12 @@ async function getRecommendations(token, seed_artists, seed_genres, seed_albums)
   );
 }
 
-/**
- * Uses an array of recommendation objects to create HTML list items showcasing your public playlists.
- */
-function renderRecommendations(recommendations) {
-  /**
-   * `recommendations` is a Javascript array of objects given to you by the Spotify API
-   * NOTE: you don't make this yourself, you let Spotify make it for you by querying the /recommendations endpoint.
-   * Each object looks like: {
-      name: "track name"
-      previewUrl: "link to 30s preview of song"
-      uri: "uri of the track"
-      artists: "array of artists (ids)"
-      id: "id of the track"
-      externalUrls: "external resource URLs (images, etc)."
-  }
-   * "For each" element in the array, create an HTML list item
-   * The list item should contain info you'd like your user to see
-   */
-  // TODO: Use a for loop over playlists.
 
-  // TODO: For each item in the playlist, call addRecommendationToHTML (from recommendations_dom.js)
+function renderRecommendations(recommendations) {
   recommendations.forEach(recommendation => addRecommendationToHTML(recommendation))
 }
 
 
-
-
-
-
-/**
- * Adds content to the HTML page when it loads
- */
 async function render_page() {
   let token = await getToken(clientId, clientSecret);
 
@@ -163,8 +122,5 @@ async function render_page() {
       break;
   }
 }
-
-console.log('print account info');
-console.log(userId, clientId, clientSecret);
 
 render_page()

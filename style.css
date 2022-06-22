@@ -23,7 +23,6 @@ nav img {
 nav a {
   text-decoration: none;
   color: var(--gray3);
-  font-weight: 600;
   padding: 0 1.5rem;
 }
 
@@ -47,6 +46,15 @@ main ul {
   background-color: var(--gray2);
   padding: 1rem;
   border-radius: var(--borderRadiusCard);
+  cursor: pointer;
+}
+.listItem:hover{
+  background-color: var(--gray4);
+}
+
+.listItem a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .listItem img{
@@ -58,4 +66,11 @@ main ul {
 
 .listItem h3 {
   font-size: 1rem;
+  font-weight: 600;
+}
+
+.listItem h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray3);
 }
