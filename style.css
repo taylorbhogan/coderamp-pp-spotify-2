@@ -2,16 +2,36 @@
 @import "./vars.css";
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  /* flex-direction: column; */
+  /* align-items: center; */
   color: white;
   background-color: var(--gray1);
   font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
 }
 
+nav {
+  background-color: black;
+  padding-top: 1.5rem;
+}
+
+nav img {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--gray3);
+  font-weight: 600;
+  padding: 0 1.5rem;
+}
+
+.activeLink {
+  color: white;
+}
+
 main {
-  width: 100%;
   margin: 2rem;
 }
 

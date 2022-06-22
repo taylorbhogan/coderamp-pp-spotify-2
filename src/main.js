@@ -136,30 +136,31 @@ function renderRecommendations(recommendations) {
  * Adds content to the HTML page when it loads
  */
 async function render_page() {
-  // Get spotify token using clientId and clientSecret values specified in constants.js
   let token = await getToken(clientId, clientSecret);
-  console.log('token', token);
-
-  // display content depending on the page we're currently on
-  if (document.title == "Playlists") {
-    // Call getUserPlaylists and save the array result.
-    let playlists = await getUserPlaylists(token);
-
-    // TODO: call renderPlaylists (pass in the array found in the previous step)
-    renderPlaylists(playlists)
-  }
-  if (document.title == "Recommendations") {
-    // TODO: call getArtistSeeds, getGenreSeeds, and getAlbumSeeds and store array results in variables
-    let artistSeeds = ["7jVv8c5Fj3E9VhNjxT4snq"];
-    let genreSeeds = [];
-    let albumSeeds = [];
 
 
-    // Use getRecommendations (pass in seeds) and save the array result.
-    let recommendations = await getRecommendations(token, artistSeeds, genreSeeds, albumSeeds);
+  const linkList = [...document.getElementById("linkList").children]
+  linkList.forEach(navLink => {
+    if (navLink.innerText === document.title){
+      navLink.classList.add("activeLink")
+    }
+  })
 
-    // TODO: call renderRecommendations (pass in the array found in the previous step)
-    renderRecommendations(recommendations)
+  switch (document.title) {
+    case "Playlists":
+      let playlists = await getUserPlaylists(token);
+      renderPlaylists(playlists)
+      break;
+    case "Recommendations":
+      // TODO: call getArtistSeeds, getGenreSeeds, and getAlbumSeeds and store array results in variables
+      let artistSeeds = ["7jVv8c5Fj3E9VhNjxT4snq"];
+      let genreSeeds = [];
+      let albumSeeds = [];
+
+      let recommendations = await getRecommendations(token, artistSeeds, genreSeeds, albumSeeds);
+      renderRecommendations(recommendations)
+    default:
+      break;
   }
 }
 
