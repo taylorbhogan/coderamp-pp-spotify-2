@@ -121,7 +121,7 @@ function renderRecommendations(recommendations) {
    * "For each" element in the array, create an HTML list item
    * The list item should contain info you'd like your user to see
    */
-
+  console.log("recommendations",recommendations);
   // TODO: Use a for loop over playlists.
 
   // TODO: For each item in the playlist, call addRecommendationToHTML (from recommendations_dom.js)
@@ -151,7 +151,7 @@ async function render_page() {
   }
   if (document.title == "Recommendations") {
     // TODO: call getArtistSeeds, getGenreSeeds, and getAlbumSeeds and store array results in variables
-    let artistSeeds = [];
+    let artistSeeds = ["7jVv8c5Fj3E9VhNjxT4snq"];
     let genreSeeds = [];
     let albumSeeds = [];
 
@@ -160,7 +160,7 @@ async function render_page() {
     let recommendations = await getRecommendations(token, artistSeeds, genreSeeds, albumSeeds);
 
     // TODO: call renderRecommendations (pass in the array found in the previous step)
-
+    renderRecommendations(recommendations)
   }
 }
 
