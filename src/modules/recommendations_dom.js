@@ -6,8 +6,8 @@ export function addRecommendationToHTML(recommendation) {
   ul.appendChild(li);
 
   const a = document.createElement("a");
-  a.href = recommendation.uri
-  li.appendChild(a)
+  a.href = recommendation.uri;
+  li.appendChild(a);
 
   const img = document.createElement("img");
   img.src = recommendation.imageUrl;
