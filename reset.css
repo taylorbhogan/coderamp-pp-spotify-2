@@ -1,0 +1,58 @@
+/**
+This reset file was inspired and influenced by the following minds:
+* @JoshWComeau
+* @hankchizljaw
+**/
+
+/* More intuitive box-sizing model. Note: some set html to border-box, then all to inherit. This is only helpful for a legacy project, wherein a content-box rule is applied to legacy elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Height cheat code! Allow percentage-based heights in the application, cf. default height based on children. */
+html,
+body{
+  height: 100%;
+}
+
+/* More intuitive scroll-behavior */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Typographic tweaks:  */
+/* Add accessible line-height; default is ~1.2 but WCAG calls for >=1.5 */
+/* Improve text rendering on MacOS */
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* But 1.5 is a bit much for headers */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Improve media defaults. Can you believe images are inline? */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles and too-small sizing (=> e.g. zoom on mobile) */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}

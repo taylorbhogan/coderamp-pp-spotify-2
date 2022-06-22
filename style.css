@@ -1,1 +1,41 @@
-/* Paste your CSS styling from Phase 1 or write some new rules below! */
+@import "./reset.css";
+@import "./vars.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: var(--gray1);
+  font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+}
+
+main {
+  width: 100%;
+  margin: 2rem;
+}
+
+#playlists-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.playlist{
+  background-color: var(--gray2);
+  padding: 1rem;
+  border-radius: var(--borderRadiusCard);
+}
+
+.playlist img{
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--borderRadiusCard);
+  margin-bottom: 1rem;
+}
+
+.playlist h3 {
+  font-size: 1rem;
+}

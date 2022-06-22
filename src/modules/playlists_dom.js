@@ -16,13 +16,14 @@ export function addPlaylistToHTML(playlistObject) {
   const ul = document.getElementById("playlists-ul");
 
   const li = document.createElement("li");
+  li.className = "playlist"
   ul.appendChild(li);
-
-  const h3 = document.createElement("h3");
-  h3.innerText = playlistObject.name;
-  li.appendChild(h3)
 
   const img = document.createElement("img");
   img.src = playlistObject.imageUrl;
   li.appendChild(img)
+
+  const h3 = document.createElement("h3");
+  h3.innerText = playlistObject.name;
+  li.appendChild(h3)
 }
