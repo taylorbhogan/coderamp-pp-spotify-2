@@ -16,7 +16,7 @@ export function addPlaylistToHTML(playlistObject) {
   const ul = document.getElementById("playlists-ul");
 
   const li = document.createElement("li");
-  li.className = "playlist"
+  li.className = "listItem"
   ul.appendChild(li);
 
   const img = document.createElement("img");

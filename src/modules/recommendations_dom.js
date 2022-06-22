@@ -16,6 +16,7 @@ export function addRecommendationToHTML(recommendation) {
   const ul = document.getElementById("recommendations-ul");
 
   const li = document.createElement("li");
+  li.className = "listItem"
   ul.appendChild(li);
 
   const songName = document.createElement("h3");

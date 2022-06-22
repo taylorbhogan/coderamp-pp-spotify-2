@@ -15,7 +15,7 @@ main {
   margin: 2rem;
 }
 
-#playlists-ul {
+main ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
@@ -23,19 +23,19 @@ main {
   padding: 0;
 }
 
-.playlist{
+.listItem{
   background-color: var(--gray2);
   padding: 1rem;
   border-radius: var(--borderRadiusCard);
 }
 
-.playlist img{
+.listItem img{
   object-fit: cover;
   width: 100%;
   border-radius: var(--borderRadiusCard);
   margin-bottom: 1rem;
 }
 
-.playlist h3 {
+.listItem h3 {
   font-size: 1rem;
 }
